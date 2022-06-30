@@ -14,14 +14,8 @@ fn main() {
         .expect("Something went wrong reading the file");
 
     let words = parse::parse(contents);
-    println!("{:?}",words);
-    let counts = huffman::generate_counts(words.clone());
-    let recon = parse::combine(words);
+    let recon = parse::combine(words.clone());
     println!("{}",recon);
-    println!("{:?}",counts);
-
-    let tree = huffman::generate_tree(counts);
-    println!("{:?}",tree)
 
 }
 
