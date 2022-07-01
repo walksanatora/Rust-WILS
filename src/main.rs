@@ -2,11 +2,16 @@
 #![allow(unused_imports)]
 #![allow(unused_variables)]
 #![allow(unused_mut)]
+#![allow(unused_parens)]
 
 use std::fs;
 
 mod huffman;
 mod parse;
+mod render;
+
+#[cfg(test)]
+mod data;
 
 fn main() {
     let filename = "hello.ils";
@@ -16,6 +21,9 @@ fn main() {
     let words = parse::parse(contents);
     let recon = parse::combine(words.clone());
     println!("{}",recon);
+
+    let freq = huffman::frequency(words);
+    println!("{:?}",freq)
 
 }
 

@@ -8,4 +8,5 @@ edition = "2021"
 [dependencies]
 bitvec = "1"
 shlex = "1.1.0"
+dotavious = "0.2.1"
 
